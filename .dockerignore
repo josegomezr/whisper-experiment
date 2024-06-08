@@ -1,0 +1,9 @@
+.local/
+.osc/
+examples/
+*.obscpio
+venv/
+.env/
+env/
+.venv/
+
