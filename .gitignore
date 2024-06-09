@@ -7,3 +7,7 @@ dependencies/
 *.flac
 *.tar
 model
+*.pyc
+*.opus
+*.json
+*.oga

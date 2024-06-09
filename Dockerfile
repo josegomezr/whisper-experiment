@@ -22,7 +22,7 @@ RUN --mount=source=./dependencies/,type=bind,destination=/usr/src/py311-dependen
 
 WORKDIR /work
 RUN --mount=source=./medium-model/,type=bind,destination=/pool/,readonly=true cp -r /pool/ ./model/
-COPY run-model.py ./
+COPY run_model.py ./
 COPY entry-point.sh /work/entry-point.sh
 
 ENTRYPOINT /work/entry-point.sh $@

@@ -10,10 +10,45 @@ Running
 
 ```bash
 # if not given it'll try to find a model in ./model/
-DA_MODEL=./base-model/ python3 run-model.py -f - < your-file
+DA_MODEL=./base-model/ python3 run_model.py -f - < your-file
 # or
-DA_MODEL=./base-model/ python3 run-model.py -f your-file
+DA_MODEL=./base-model/ python3 run_model.py -f your-file
 ```
+
+Record your computer audio
+---
+
+```bash
+# Make sure to have your venv enabled.
+# if not given it'll try to find a model in ./model/
+DA_MODEL=./base-model/ bash transcribe-local-audio.bash
+# select program to record [uses pipewire], empty => skip
+# select mic input to record [uses pipewire], empty => skip
+# Runs the model
+```
+
+
+Run your Telegram bot
+
+```bash
+# Make sure to have your venv enabled.
+# export TG_BOT_TOKEN=<your bot token>
+# export TG_BOT_EXCLUSIVE_USERNAMES=<optional list of usernames to listen for messages>
+# export DA_MODEL=./medium-model/ # if not given it'll try to find a model in ./model/
+python tg-bot.py
+```
+---
+
+```bash
+# Make sure to have your venv enabled.
+# if not given it'll try to find a model in ./model/
+DA_MODEL=./base-model/ bash transcribe-local-audio.bash
+# select program to record [uses pipewire], empty => skip
+# select mic input to record [uses pipewire], empty => skip
+# Runs the model
+```
+
+
 
 ---
 

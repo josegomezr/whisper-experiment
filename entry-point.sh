@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 ./run-model.py $@
+python3 ./run_model.py $@
