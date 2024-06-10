@@ -48,7 +48,24 @@ DA_MODEL=./base-model/ bash transcribe-local-audio.bash
 # Runs the model
 ```
 
+---
 
+Notes for Pulseaudio
+
+Record mic stream
+---
+
+```bash
+arecord -t wav standup.wav
+# or
+parecord -v -d "$(pactl info | sed -En '/Default Source: (.+)/ { s/.+: (.+)/\1/;p}')" --file-format=wav -r in-stream.wav
+```
+
+Record monitor stream
+
+```bash
+parecord -v -d "$(pactl info | sed -En '/Default Sink: (.+)/ { s/.+: (.+)/\1/;p}')" --file-format=wav -r out-stream.wav
+```
 
 ---
 

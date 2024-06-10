@@ -1,9 +1,9 @@
-bin/bash
+#!bin/bash
 
 function run_model() {
   filename=${1??"ENTER FILENAME"}
 
-  python run-model.py -f - < $filename \
+  python run_model.py -f - < $filename \
     | jq -Mcr \
     | tee $filename.json \
     | jq -Mcr '.chunks[] | [(.timestamp | join(" - ")), .text] | join("\n  ")' \

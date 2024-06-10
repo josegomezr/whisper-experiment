@@ -3,6 +3,7 @@ venv/
 env/
 .env/
 *-model/
+*_model/
 dependencies/
 *.flac
 *.tar
@@ -11,3 +12,4 @@ model
 *.opus
 *.json
 *.oga
+*.wav
